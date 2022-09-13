@@ -19,4 +19,10 @@ public class MensageriaController {
         producer.send("Mensagem de teste enviada ao tópico");
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+    /*@GetMapping("/get")
+    public ResponseEntity get(){
+        producer.get("Mensagem de teste enviada ao tópico");
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }*/
 }

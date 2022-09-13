@@ -10,13 +10,17 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class Producer {
-    private final String topic ;
+    @Autowired
+    @Value("${topic.name}")
+    private String topic ;
+
+    @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    public Producer(@Value("${topic.name}")String topic, KafkaTemplate<String, String> kafkaTemplate) {
+    /*public Producer(@Value("${topic.name}")String topic, KafkaTemplate<String, String> kafkaTemplate) {
         this.topic = topic;
         this.kafkaTemplate = kafkaTemplate;
-    }
+    }*/
 
     public void send(String message){
         log.info("Payload enviado: {}", message);
