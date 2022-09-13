@@ -15,14 +15,9 @@ public class MensageriaController {
     private Producer producer;
 
     @GetMapping("/send")
-    public ResponseEntity send(){
+    public ResponseEntity<HttpStatus> send(){
         producer.send("Mensagem de teste enviada ao tópico");
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    /*@GetMapping("/get")
-    public ResponseEntity get(){
-        producer.get("Mensagem de teste enviada ao tópico");
-        return ResponseEntity.status(HttpStatus.CREATED).build();
-    }*/
 }
